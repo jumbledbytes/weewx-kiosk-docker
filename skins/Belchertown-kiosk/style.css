@@ -1064,6 +1064,13 @@ p.entry-meta {
     float:left;
 }
 
+.version {
+    display: inline-block;
+    font-size: 12px;
+    padding-left: 20px;
+    float: left;
+}
+
 .updated {
     display: inline-block;
     font-size: 12px;
@@ -1278,7 +1285,7 @@ p.entry-meta {
 }
 
 .outtemp_outer {
-    font-size:56px;
+    font-size:68px;
     font-weight:bold;
     text-align: center;
     margin-right: 0px;
