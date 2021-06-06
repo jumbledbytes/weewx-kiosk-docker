@@ -143,6 +143,17 @@ Follow the instructions here to edit your weewx configuration to enable publishi
 
 https://github.com/weewx/weewx/wiki/mqtt
 
+In the MQTT section you will need to include something similar to the following:
+
+```
+    [[MQTT]]
+        server_url = mqtt://user:password@mosquitto_host:1883/
+	topic = weather
+        unit_system = US
+        binding = archive, loop
+        aggregation = aggregate
+```
+
 ### Build the Docker image
 
 To build the docker image that will generate the reports run:
