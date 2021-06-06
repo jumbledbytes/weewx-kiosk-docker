@@ -2,3 +2,5 @@
 conf/weewx.conf.local
 conf/skin.conf.local
 reports/*
+skins/Belchertown/skin.conf
+skins/Belchertown-kiosk/skin.conf
