@@ -125,6 +125,8 @@ protocol websockets
 
 **Note** The port 9001 must match the destination port used when setting up a reverse proxy below.
 
+The setup does not cover configuring the Mosquitto server authentication and access control refer to the Mosquitto documentation for your version to instructions on how to configure authentication and access controls if you need them.
+
 Once the changes are saved restart the Mosquitto server.
 
 #### Configuring SSL for HTTPS
@@ -134,6 +136,12 @@ Once Mosquitto is installed you will need to set it up be be accessed via a secu
 To set up Mosquitto to use SSL we are going to piggy back on Lets Encrypt Certificates. If you are not using https to server your reports (not recommended) then you can set `WEEWX_MQTT_SSL` to 0.
 
 Instead of configuring Mosquitto to use certificates directly we are going to setup a reverse proxy on the Synology. To set up the reverse proxy go to the Synology Control Panel -> Application Portal -> Reverse Proxy and click `Create`. In the form give your reverse proxy a description, set Source Protocol to `HTTPS`, set the hostname value to match the value you saved in `WEEWX_MQTT_HOST` (i.e.`mqttserver.weatherstation.url.com`). Set the Port to match the value you saved for `WEEWX_MQTT_PORT`. In the destination section set Protocol to `HTTP`, Hostname to `localhost`, and port to 9001.
+
+### Configure your Weewx server to use MQTT
+
+Follow the instructions here to edit your weewx configuration to enable publishing to the Mosquitto broker you just setup
+
+https://github.com/weewx/weewx/wiki/mqtt
 
 ### Build the Docker image
 
