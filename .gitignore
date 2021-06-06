@@ -1,0 +1,4 @@
+.env.local
+conf/weewx.conf.local
+conf/skin.conf.local
+reports/*
