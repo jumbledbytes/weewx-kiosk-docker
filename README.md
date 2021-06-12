@@ -66,7 +66,7 @@ A small amoutn of manual configuration is required to setup the Raspberry Pi in 
 
 - Copy the `.env.local` file you setup above to `/home/pi/.weewx_kiosk` on the Raspberry Pi.
 - Copy the `scripts/kiosk.sh` file to `/home/pi/kiosk.sh` in the Raspberry Pi.
-- Copy the `conf/kiosk.desktop` file to `/home/pi/.config/autostart` on the Raspberry Pi.
+- Copy the `conf/autostart` file to `/home/pi/.config/lxsession/LXDE-pi` on the Raspberry Pi.
 
 ### [Optional] Setup MQTT Broker
 
