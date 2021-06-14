@@ -34,9 +34,6 @@
       #if $day.UV.has_data
       "UV":"$current.UV",
       #end if
-      #if $day.ET.has_data and $day.ET.sum.raw > 0.0
-      "ET":"$current.ET",
-      #end if
       #if $day.radiation.has_data
       "solarRadiation":"$current.radiation",
       #end if
