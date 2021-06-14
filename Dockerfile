@@ -63,6 +63,8 @@ COPY conf/skin.conf.local /etc/weewx/skins/Belchertown-kiosk/skin.conf
 # and then relies on a cronjob to periodically re-generate them
 COPY ./scripts/entry.sh /
 COPY ./scripts/generate_reports.sh /
+
+RUN crontab /etc/cron.d/crontab-weewx
 RUN chmod +x /entry.sh
 RUN chmod +x /generate_reports.sh
 CMD ["/entry.sh"]
