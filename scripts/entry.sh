@@ -2,5 +2,5 @@
 
 service rsyslog start
 /generate_reports.sh
-touch /var/log/cron.log
-/usr/sbin/cron && tail -f /var/log/cron.log
+touch /var/log/weewx.log
+/usr/sbin/cron && tail -f /var/log/weewx.log
