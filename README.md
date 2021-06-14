@@ -154,6 +154,18 @@ In the MQTT section you will need to include something similar to the following:
         aggregation = aggregate
 ```
 
+### Install dependencies
+
+In order to build the docker image you will python3 installed along with the python-dotenv package.
+
+You can ensure you have pip installed by running
+
+`python3 -m ensurepip`
+
+Once pip is installed run
+
+`python3 -m pip install python-dotenv`
+
 ### Build the Docker image
 
 To build the docker image that will generate the reports run:
