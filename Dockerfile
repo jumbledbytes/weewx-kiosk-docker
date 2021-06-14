@@ -42,6 +42,7 @@ COPY ./skins/Belchertown /etc/weewx/skins/Belchertown
 COPY ./skins/Belchertown-kiosk /etc/weewx/skins/Belchertown-kiosk
 COPY ./conf/skin.conf.local /etc/weewx/skins/Belchertown/skin.conf
 COPY ./conf/skin.conf.local /etc/weewx/skins/Belchertown-kiosk/skin.conf
+COPY ./.env.local /.env.local
 
 # Ensure the image is up-to-date
 RUN apt-get -y -u dist-upgrade
