@@ -12,6 +12,6 @@ cp ./conf/skin.conf.local ./skins/Belchertown-kiosk/skin.conf
 
 docker run -d \
   -e TZ=$WEEWX_STATION_TIMEZONE\
-  -v skins:/etc/weewx/skins\
-  -v reports:/var/www/html/weewx\
+  -v ${PWD}/skins:/etc/weewx/skins\
+  -v ${PWD}/reports:/var/www/html/weewx\
   weewx/kiosk:latest
