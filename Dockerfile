@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install dependent packages
 RUN apt-get update && \
-  apt-get -y --no-install-recommends install wget ssh cron fonts-freefont-ttf rsyslog gnupg2 python3-dev default-libmysqlclient-dev gcc
+  apt-get -y --no-install-recommends install wget ssh cron fonts-freefont-ttf rsyslog gnupg2 python3-dev default-libmysqlclient-dev gcc tzdata
 
 
 # Install python dependencies
