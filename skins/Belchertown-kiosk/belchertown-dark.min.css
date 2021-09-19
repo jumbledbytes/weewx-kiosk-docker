@@ -6579,7 +6579,7 @@ text.highcharts-drilldown-data-label {
 /* Belchertown Dark Skin Overrides */
 body.dark {
   color: #fff;
-  background-color: #111;
+  background-color: #000;
 }
 .dark ::-moz-selection {
   background-color: #fff !important;

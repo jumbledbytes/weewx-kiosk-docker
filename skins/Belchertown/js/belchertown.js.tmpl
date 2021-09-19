@@ -447,6 +447,8 @@ function update_weewx_data( data ) {
     jQuery(".dailystatswindmax").html( data["day"]["wind"]["max"] );
     jQuery(".dailystatsrain").html( data["day"]["rain"]["sum"] );
     jQuery(".dailystatsrainrate").html( data["day"]["rain"]["max"] );
+    jQuery(".dailystatspm25").html( data["day"]["pm2_5"]["avg"] );
+    jQuery(".dailystatspm10").html( data["day"]["pm10"]["avg"] );
     
     // Month Snapshot Stats Section
     jQuery(".monthstatshigh").html( data["month"]["outTemp"]["max"] );
@@ -455,6 +457,8 @@ function update_weewx_data( data ) {
     jQuery(".monthstatswindmax").html( data["month"]["wind"]["max"] );
     jQuery(".monthstatsrain").html( data["month"]["rain"]["sum"] );
     jQuery(".monthstatsrainrate").html( data["month"]["rain"]["max"] );
+    jQuery(".monthstatspm25").html( data["month"]["pm2_5"]["avg"] );
+    jQuery(".monthstatspm10").html( data["month"]["pm10"]["avg"] );
     
     // Sunrise and Sunset            
     jQuery(".sunrise-value").html( moment.unix( parseFloat(data["almanac"]["sunrise_epoch"]).toFixed(0) ).utcOffset($moment_js_utc_offset).format( "$obs.label.time_sunrise" ) );
