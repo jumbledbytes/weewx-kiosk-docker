@@ -11,6 +11,7 @@ RUN apt-get update && \
 # Install python dependencies
 RUN apt-get -y --no-install-recommends install python3-pil
 RUN apt-get -y --no-install-recommends install python3-mysqldb
+RUN apt-get -y --no-install-recommends install python3-dev default-libmysqlclient-dev build-essential pkg-config
 
 RUN python3 -m pip install configparser
 RUN python3 -m pip install cheetah3
