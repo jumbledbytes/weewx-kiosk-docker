@@ -1,7 +1,10 @@
 FROM python:3.8-slim-buster
 COPY setup/ /tmp/setup/
-ENV WEEWX_VERSION 4.5.1
+ENV WEEWX_VERSION 4.10.2-1
 ENV DEBIAN_FRONTEND noninteractive
+
+# Ensure the image is up-to-date
+RUN apt-get -y -u dist-upgrade
 
 # Install dependent packages
 RUN apt-get update && \
@@ -27,9 +30,9 @@ RUN python3 -m pip install Pillow
 RUN wget -qO - https://weewx.com/keys.html | apt-key add -
 RUN wget -qO - https://weewx.com/apt/weewx-python3.list | tee /etc/apt/sources.list.d/weewx.list
 RUN apt-get update
-RUN apt-get -y --no-install-recommends install weewx
+RUN apt-get -y --no-install-recommends install weewx=$WEEWX_VERSION
 
-COPY weewx-belchertown-release-1.2.tar.gz /tmp/setup/weewx-belchertown.tar.gz
+COPY weewx-belchertown-release.1.3.1.tar.gz /tmp/setup/weewx-belchertown.tar.gz
 
 # The custom script validates weewx checksums
 RUN mkdir -p /var/www/html/weewx
@@ -44,9 +47,6 @@ COPY ./skins/Belchertown-kiosk /etc/weewx/skins/Belchertown-kiosk
 COPY ./conf/skin.conf.local /etc/weewx/skins/Belchertown/skin.conf
 COPY ./conf/skin.conf.local /etc/weewx/skins/Belchertown-kiosk/skin.conf
 COPY ./.env.local /.env.local
-
-# Ensure the image is up-to-date
-RUN apt-get -y -u dist-upgrade
 
 # Cleanup the installation
 RUN apt-get clean && rm -rf /tmp/setup /var/lib/apt/lists/* /tmp/* /var/tmp/*
